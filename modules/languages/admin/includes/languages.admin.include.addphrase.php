@@ -31,13 +31,13 @@ function languages_admin_addphrase_build($data,$db){
 			// Add This Phrase For All The Languages
 			foreach($data->languageList as $languageItem){
 				$dupe = $db->prepare('getUniquePhrase','admin_languages',array('!lang!'=>$languageItem['shortName'])); // does this phrase exist as a default?
-				$dupe = $dupe->execute(
+				$dupe->execute(array(
 					':isAdmin' => $data->output['phraseForm']->sendArray[':isAdmin'],
 					':phrase' => $data->output['phraseForm']->sendArray[':phrase'],
 					':text' => (isset($data->output['phraseForm']->sendArray[':text_'.$languageItem['shortName']]{1})) ? $data->output['phraseForm']->sendArray[':text_'.$languageItem['shortName']] : $data->output['phraseForm']->sendArray[':text_en_us'],
 					':module' => $data->output['phraseForm']->sendArray[':module'],
 					':override' => 0
-				);
+				));
 				if (!$dupe->fetchColumn()) {
 					$statement = $db->prepare('addPhraseByLanguageViaForm','admin_languages',array('!lang!'=>$languageItem['shortName']));
 					$result = $statement->execute(array(
