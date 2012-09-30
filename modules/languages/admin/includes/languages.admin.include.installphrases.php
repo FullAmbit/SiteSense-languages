@@ -68,9 +68,8 @@ function languages_admin_installphrases_build($data,$db){
 						}
 					}
 				}
-				
 				language_admin_savePhrases($data,$db,"en_us",'',$coreUserPhrases);
-				language_admin_savePhrases($data,$db,"en_us",$moduleName,$userPhrases);
+				language_admin_savePhrases($data,$db,"en_us",$moduleShortName,$userPhrases);
 				
 				//--Admin Phrases
 				$adminEndTarget = 'modules/'.$moduleName.'/admin/languages/'.$moduleName.'.admin.phrases.en_us.php';
@@ -83,12 +82,12 @@ function languages_admin_installphrases_build($data,$db){
 							$coreAdminPhrases = $adminPhrases['core'];
 							unset($adminPhrases['core']);
 						}
-						language_admin_savePhrases($data,$db,"en_us",$moduleName,$adminPhrases,TRUE);
+						language_admin_savePhrases($data,$db,"en_us",$moduleShortName,$adminPhrases,TRUE);
 					}
 				}
 				
 				language_admin_savePhrases($data,$db,"en_us",'',$coreAdminPhrases,TRUE);
-				language_admin_savePhrases($data,$db,"en_us",$moduleName,$adminPhrases,TRUE);
+				language_admin_savePhrases($data,$db,"en_us",$moduleShortName,$adminPhrases,TRUE);
 				
 				//---Now Loop Through All OTHER Languages and Install New Phrases
 				$_POST['action'] = 1;
@@ -97,11 +96,11 @@ function languages_admin_installphrases_build($data,$db){
 
 					// Save User-End Core Phrases And Module Phrases
 					if(isset($coreUserPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],'',$coreUserPhrases);
-					if(isset($userPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],$moduleName,$userPhrases);
+					if(isset($userPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],$moduleShortName,$userPhrases);
 					
 					// Save Admin-End Core Phrases And Module Phrases
 					if(isset($coreAdminPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],'',$coreAdminPhrases,TRUE);
-					if(isset($adminPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],$moduleName,$adminPhrases,TRUE);
+					if(isset($adminPhrases)) language_admin_savePhrases($data,$db,$languageItem['shortName'],$moduleShortName,$adminPhrases,TRUE);
 				}
 			}
 			
