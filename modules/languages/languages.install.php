@@ -3,7 +3,7 @@ function languages_settings(){
 	return array(
 		'name' => 'languages',
 		'shortName' => 'languages',
-		'version' => '1.0.1'
+		'version' => '1.0.2'
 	);
 }
 function languages_install($db,$drop = FALSE,$firstInstall=FALSE,$lang='en_us'){
