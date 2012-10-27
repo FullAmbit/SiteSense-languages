@@ -3,7 +3,7 @@
 common_include('modules/languages/admin/languages.admin.common.php');
 
 function languages_admin_installphrases_build($data,$db){
-	if(!checkPermission('installphrases','languages',$data)) {
+	if(!checkPermission('installPhrases','languages',$data)) {
 		$data->output['abort'] = true;
 		$data->output['abortMessage']='<h2>'.$data->phrases['core']['accessDeniedHeading'].'</h2>'.$data->phrases['core']['accessDeniedMessage'];
 			return;

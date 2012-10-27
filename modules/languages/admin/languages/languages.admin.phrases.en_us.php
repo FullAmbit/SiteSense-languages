@@ -2,14 +2,15 @@
 function languages_languages_admin_en_us(){
 	return array(
 		'core' => array(
-			'languages'                        => 'Languages',
-			'permission_languages_access'      => 'Access Languages',
-			'permission_languages_list'        => 'List Languages',
-			'permission_languages_addPhrase'   => 'Add Phrase',
-			'permission_languages_default'     => 'Set Default Language',
-			'permission_languages_editPhrase'  => 'Edit Phrase',
-			'permission_languages_listPhrases' => 'List Phrases',
-			'permission_languages_update'      => 'Update Phrases'
+			'languages'                           => 'Languages',
+			'permission_languages_access'         => 'Access Languages',
+			'permission_languages_list'           => 'List Languages',
+			'permission_languages_addPhrase'      => 'Add Phrase',
+			'permission_languages_default'        => 'Set Default Language',
+			'permission_languages_editPhrase'     => 'Edit Phrase',
+			'permission_languages_listPhrases'    => 'List Phrases',
+			'permission_languages_installPhrases' => 'Install Phrases',
+			'permission_languages_update'         => 'Update Phrases'
 		),
 		'manageLanguagesHeading'     => 'Installed Languages',
 		'phrase'                     => 'Phrase',
