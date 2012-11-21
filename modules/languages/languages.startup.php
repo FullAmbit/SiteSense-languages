@@ -1,5 +1,4 @@
 <?php
-
 function languages_startup($data,$db){
 	// Load Languages
     $statement = $db->prepare("getAllLanguages","common");
